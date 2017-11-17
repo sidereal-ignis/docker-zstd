@@ -13,10 +13,6 @@ RUN set -x \
 
 FROM debian:stretch-slim
 
-RUN set -x \
- && apt-get update && apt-get install -y --no-install-recommends liblz4-1 \
- && rm -rf /var/lib/apt/lists/*
-
 COPY --from=0 /root/zstd/zstd /usr/local/bin/
 
 ENTRYPOINT [ "zstd" ]
