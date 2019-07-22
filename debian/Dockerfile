@@ -1,4 +1,4 @@
-FROM buildpack-deps:stretch
+FROM buildpack-deps:buster
 
 WORKDIR /root
 
@@ -12,7 +12,7 @@ RUN set -x \
  && ./zstd --help
 
 
-FROM debian:stretch-slim
+FROM debian:buster-slim
 
 COPY --from=0 /root/zstd/zstd /usr/local/bin/
 
